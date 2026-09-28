@@ -46,19 +46,30 @@ button{font-family:inherit;cursor:pointer}
 .wave.on span{background:var(--accent);animation:bar .8s ease-in-out infinite}
 @keyframes bar{0%,100%{transform:scaleY(.3)}50%{transform:scaleY(1)}}
 .btn-start{height:60px;padding:0 32px;border-radius:30px;font-size:18px}
-.nur{width:500px;flex-shrink:0;display:flex;flex-direction:column;gap:18px}
-.bubble{position:relative;padding:28px 30px;border-radius:24px;background:var(--card);border:1px solid var(--line);box-shadow:0 2px 12px rgba(31,27,22,.06);display:flex;flex-direction:column;gap:16px}
-.bubble::after{content:"";position:absolute;bottom:-11px;left:64px;width:20px;height:20px;background:var(--card);border-right:1px solid var(--line);border-bottom:1px solid var(--line);transform:rotate(45deg)}
-.bubble-hi{font-size:20px;font-weight:700;line-height:1.35}
-.steps{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
-.steps li{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.5;color:#4A4139}
-.steps b{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--soft);color:var(--accent);font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:-3px}
-.nur-who{display:flex;align-items:flex-end;gap:16px;padding-left:20px}
-.nur-photo{width:110px;height:197px;flex-shrink:0;border-radius:20px;overflow:hidden;background:#F3ECE6;box-shadow:0 0 0 1px var(--line)}
+.nur{width:420px;flex-shrink:0;display:flex;flex-direction:column;gap:14px}
+.bubble{position:relative;padding:22px 24px;border-radius:20px;background:var(--card);border:1px solid var(--line);box-shadow:0 2px 12px rgba(31,27,22,.06);display:flex;flex-direction:column;gap:12px}
+.bubble::after{content:"";position:absolute;bottom:-11px;left:52px;width:20px;height:20px;background:var(--card);border-right:1px solid var(--line);border-bottom:1px solid var(--line);transform:rotate(45deg)}
+.bubble-hi{font-size:17px;font-weight:700;line-height:1.35}
+.steps{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.steps li{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.5;color:#4A4139}
+.steps b{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--soft);color:var(--accent);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:-3px}
+.nur-who{display:flex;align-items:flex-end;gap:14px;padding-left:20px}
+.nur-photo{width:84px;height:150px;flex-shrink:0;border-radius:16px;overflow:hidden;background:#F3ECE6;box-shadow:0 0 0 1px var(--line)}
 .nur-photo img{display:block;width:100%;height:100%;object-fit:cover}
 .nur-name{display:flex;flex-direction:column;gap:8px;padding-bottom:10px}
-.nur-name div{font-size:18px;font-weight:700}
-.badge{align-self:flex-start;padding:6px 12px;border-radius:999px;background:var(--accent);font-size:13px;font-weight:700;color:#fff}
+.nur-name div{font-size:16px;font-weight:700}
+.badge{align-self:flex-start;padding:5px 11px;border-radius:999px;background:var(--accent);font-size:12px;font-weight:700;color:#fff}
+
+/* ---------- Фондағы тұлғалар шеруі ---------- */
+.intro{position:relative;z-index:1}
+.parade{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:6vh 0 8vh;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.parade-row{display:flex;gap:28px;width:max-content;animation:parade 90s linear infinite}
+.parade-row.rev{animation-direction:reverse;animation-duration:110s;margin-left:-120px}
+.parade-row figure{margin:0;width:150px;height:200px;flex-shrink:0;border-radius:18px;overflow:hidden;opacity:.22}
+.parade-row img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:sepia(1) saturate(.8) contrast(.9) blur(1.5px)}
+@keyframes parade{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.parade-row{animation:none}}
 
 /* ---------- Кейіпкерлер ---------- */
 .chars{min-height:100vh;display:flex;flex-direction:column;gap:32px}
@@ -73,21 +84,21 @@ button{font-family:inherit;cursor:pointer}
 .layout{display:flex;gap:32px;align-items:stretch}
 .list-col{width:300px;flex-shrink:0;display:flex;flex-direction:column;gap:12px}
 .list-label{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
-.list{display:flex;flex-direction:column;gap:12px;max-height:640px;overflow-y:auto;padding:2px 6px 2px 2px}
+.list{display:flex;flex-direction:column;gap:12px;max-height:520px;overflow-y:auto;padding:2px 6px 2px 2px}
 .card{display:flex;align-items:center;gap:12px;min-height:72px;padding:12px 14px;border-radius:16px;text-align:left;background:#FBF7EF;border:2px solid var(--line);flex-shrink:0}
 .card[aria-pressed="true"]{background:var(--card);box-shadow:0 2px 8px rgba(31,27,22,.08)}
 .mini{flex-shrink:0;width:48px;height:48px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#fff}
 .mini img{display:block;width:100%;height:100%;object-fit:cover}
 .card-name{display:block;font-size:14px;font-weight:700;line-height:1.3;color:var(--ink)}
 .card-years{display:block;font-size:13px;font-weight:500;color:var(--ink3);margin-top:2px}
-.stage{flex:1;min-width:0;display:flex;min-height:640px;background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 1px 2px rgba(31,27,22,.06)}
-.portrait{width:350px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:96px;font-weight:800;color:#fff;letter-spacing:-.02em}
+.stage{flex:1;min-width:0;display:flex;min-height:520px;background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 1px 2px rgba(31,27,22,.06)}
+.portrait{width:280px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:76px;font-weight:800;color:#fff;letter-spacing:-.02em}
 .portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:center top}
-.info{flex:1;min-width:0;display:flex;flex-direction:column;gap:24px;padding:40px}
-.info h2{margin:6px 0;font-size:36px;font-weight:700;line-height:1.15;letter-spacing:-.01em}
+.info{flex:1;min-width:0;display:flex;flex-direction:column;gap:20px;padding:32px}
+.info h2{margin:6px 0;font-size:30px;font-weight:700;line-height:1.15;letter-spacing:-.01em}
 .meta{font-size:16px;font-weight:500;color:var(--ink2)}
-.quote{margin:0;padding:28px 28px 24px;background:var(--bg);border-radius:20px;display:flex;flex-direction:column;gap:14px}
-.quote blockquote{margin:0;font-weight:600;font-size:28px;line-height:1.35;letter-spacing:-.01em}
+.quote{margin:0;padding:22px 24px 20px;background:var(--bg);border-radius:20px;display:flex;flex-direction:column;gap:14px}
+.quote blockquote{margin:0;font-weight:600;font-size:23px;line-height:1.35;letter-spacing:-.01em}
 .orig{font-size:14px;font-weight:500;color:var(--ink3)}
 .quote figcaption{font-size:16px;line-height:1.5;color:var(--ink2)}
 .actions{margin-top:auto;display:flex;flex-direction:column;gap:16px}
@@ -122,12 +133,15 @@ button{font-family:inherit;cursor:pointer}
   .quote{padding:20px}
   .quote blockquote{font-size:22px}
   .btn{flex:1;justify-content:center}
+  .parade-row{gap:16px}
+  .parade-row figure{width:96px;height:128px;border-radius:14px}
 }
 </style>
 </head>
 <body>
 
 <!-- ========== 1-бет: КІРІСПЕ ========== -->
+<div class="parade" id="parade" aria-hidden="true"><div class="parade-row"></div><div class="parade-row rev"></div></div>
 <div id="page-intro" class="wrap intro">
   <header>
     <a class="logo" href="#" aria-label="Тарих үндері — басты бет">
@@ -256,11 +270,36 @@ const CHARACTERS = [
   }
 ];
 
+/* =====================================================================
+   БАСТЫ БЕТТІҢ ФОНЫНДАҒЫ ПОРТРЕТТЕР
+   Жаңа тұлға қосу үшін суреттің сілтемесін немесе бумадағы файл атын жазыңыз.
+   ===================================================================== */
+const WM = f => 'https://commons.wikimedia.org/wiki/Special:FilePath/' + f + '?width=300';
+const PORTRAITS = [
+  'abai.jpg',                                   // Абай Құнанбайұлы
+  WM('Bukeykhanov.jpg'),                        // Әлихан Бөкейханов
+  WM('Chokan_Valikhanov_portrait.jpg'),         // Шоқан Уәлиханов
+  WM('Ахмет_Байтұрсынұлы_(1913-02-02).jpg'),   // Ахмет Байтұрсынұлы
+  WM('Altynsarin.jpg'),                         // Ыбырай Алтынсарин
+  WM('Dulatov_Mirjakip.jpg'),                   // Міржақып Дулатұлы
+  WM('Saken_Seifullin.jpg'),                    // Сәкен Сейфуллин
+  WM('Auezov_Mukhtar.jpg')                      // Мұхтар Әуезов
+];
+(function buildParade() {
+  const rows = document.querySelectorAll('#parade .parade-row');
+  const html = list => list.concat(list).map(src =>
+    `<figure><img src="${src}" alt="" loading="lazy" onerror="this.parentNode.remove()"></figure>`).join('');
+  const half = PORTRAITS.slice(Math.ceil(PORTRAITS.length / 2)).concat(PORTRAITS.slice(0, Math.ceil(PORTRAITS.length / 2)));
+  rows[0].innerHTML = html(PORTRAITS.concat(PORTRAITS));
+  rows[1].innerHTML = html(half.concat(half));
+})();
+
 /* ---------- Беттер арасында ауысу ---------- */
 const pageIntro = document.getElementById('page-intro');
 const pageChars = document.getElementById('page-chars');
 function route() {
   const onChars = location.hash === '#kejipkerler';
+  document.getElementById('parade').classList.toggle('hidden', onChars);
   pageIntro.classList.toggle('hidden', onChars);
   pageChars.classList.toggle('hidden', !onChars);
   if (!onChars) stop();
